@@ -1,0 +1,61 @@
+➜ docker-compose build
+Building thenationofalex
+Step 1/7 : FROM python:3
+d6ff36c9ec48: Pull complete
+c958d65b3090: Pull complete
+edaf0a6b092f: Pull complete
+80931cf68816: Pull complete
+bc1b8aca3825: Pull complete
+edfe96a4dd20: Pull complete
+4e7c0e94bdeb: Pull complete
+8dffdfc294e3: Pull complete
+25f1468e00b7: Pull complete
+Digest: sha256:b04db6093bb158affaa89ac5af1281e748092433442e8ae0096ba8fbe37f00cc
+Status: Downloaded newer image for python:3
+ ---> 6feb119dd186
+Step 2/7 : ENV PYTHONUNBUFFERED 1
+ ---> Running in 4ae2ecda00eb
+Removing intermediate container 4ae2ecda00eb
+ ---> 41126c4051fa
+Step 3/7 : RUN mkdir /code
+ ---> Running in 2356d6850077
+Removing intermediate container 2356d6850077
+ ---> 5e404d491765
+Step 4/7 : WORKDIR /code
+ ---> Running in a09fe687132b
+Removing intermediate container a09fe687132b
+ ---> f8595ffb4869
+Step 5/7 : COPY requirements.txt /code/
+ ---> f5b1945fce0f
+Step 6/7 : RUN pip install -r requirements.txt
+ ---> Running in 7ad1b85aec7b
+Collecting pylint==2.5.3
+  Downloading pylint-2.5.3-py3-none-any.whl (324 kB)
+Collecting isort<5,>=4.2.5
+  Downloading isort-4.3.21-py2.py3-none-any.whl (42 kB)
+Collecting toml>=0.7.1
+  Downloading toml-0.10.1-py2.py3-none-any.whl (19 kB)
+Collecting astroid<=2.5,>=2.4.0
+  Downloading astroid-2.4.2-py3-none-any.whl (213 kB)
+Collecting mccabe<0.7,>=0.6
+  Downloading mccabe-0.6.1-py2.py3-none-any.whl (8.6 kB)
+Collecting lazy-object-proxy==1.4.*
+  Downloading lazy_object_proxy-1.4.3-cp38-cp38-manylinux1_x86_64.whl (58 kB)
+Collecting wrapt~=1.11
+  Downloading wrapt-1.12.1.tar.gz (27 kB)
+Collecting six~=1.12
+  Downloading six-1.15.0-py2.py3-none-any.whl (10 kB)
+Building wheels for collected packages: wrapt
+  Building wheel for wrapt (setup.py): started
+  Building wheel for wrapt (setup.py): finished with status 'done'
+  Created wheel for wrapt: filename=wrapt-1.12.1-cp38-cp38-linux_x86_64.whl size=81497 sha256=5ce592f683571ea7e1854fa715c934e08534ee80a7e44b64b4c2ea204fd97414
+  Stored in directory: /root/.cache/pip/wheels/5f/fd/9e/b6cf5890494cb8ef0b5eaff72e5d55a70fb56316007d6dfe73
+Successfully built wrapt
+Installing collected packages: isort, toml, lazy-object-proxy, wrapt, six, astroid, mccabe, pylint
+Successfully installed astroid-2.4.2 isort-4.3.21 lazy-object-proxy-1.4.3 mccabe-0.6.1 pylint-2.5.3 six-1.15.0 toml-0.10.1 wrapt-1.12.1
+Removing intermediate container 7ad1b85aec7b
+ ---> 42398f20df30
+Step 7/7 : COPY . /code/
+ ---> 10fa9d3a075b
+Successfully built 10fa9d3a075b
+Successfully tagged thenationofalex_thenationofalex:latest

@@ -1,0 +1,5 @@
+version: '3'
+services:
+  thenationofalex:
+    build: .
+    container_name: thenationofalex
